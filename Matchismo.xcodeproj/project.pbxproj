@@ -22,6 +22,7 @@
 		D85786DA178879F900AE0D49 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = D85786D9178879F900AE0D49 /* Deck.m */; };
 		D85786DD17887A1F00AE0D49 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = D85786DC17887A1F00AE0D49 /* PlayingCard.m */; };
 		D85786E017887A3800AE0D49 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = D85786DF17887A3800AE0D49 /* PlayingCardDeck.m */; };
+		D85786E317889F6300AE0D49 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = D85786E217889F6300AE0D49 /* CardMatchingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		D85786DC17887A1F00AE0D49 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		D85786DE17887A3800AE0D49 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
 		D85786DF17887A3800AE0D49 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
+		D85786E117889F6300AE0D49 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
+		D85786E217889F6300AE0D49 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 		D85786D7178879CC00AE0D49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D85786E117889F6300AE0D49 /* CardMatchingGame.h */,
+				D85786E217889F6300AE0D49 /* CardMatchingGame.m */,
 				D85786D4178879B200AE0D49 /* Card.h */,
 				D85786D5178879B200AE0D49 /* Card.m */,
 				D85786D8178879F900AE0D49 /* Deck.h */,
@@ -209,6 +214,7 @@
 				D85786DA178879F900AE0D49 /* Deck.m in Sources */,
 				D85786DD17887A1F00AE0D49 /* PlayingCard.m in Sources */,
 				D85786E017887A3800AE0D49 /* PlayingCardDeck.m in Sources */,
+				D85786E317889F6300AE0D49 /* CardMatchingGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
