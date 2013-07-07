@@ -11,6 +11,9 @@
 @interface CardMatchingGame()
 @property (strong, nonatomic) NSMutableArray *cards;
 @property (nonatomic, readwrite) int score;
+@property (nonatomic, readwrite) NSString *flipResult;
+@property (nonatomic) NSString *flipText;
+@property (nonatomic) NSString *flipScore;
 @end
 
 @implementation CardMatchingGame
@@ -20,6 +23,13 @@
 {
     if (!_cards) _cards = [[NSMutableArray alloc] init];
     return _cards;
+}
+
+// Lazily instantiate result string
+- (NSString *)flipResult
+{
+    if (!_flipResult) _flipResult = [[NSString alloc] init];
+    return _flipResult;
 }
 
 // designated initializer
@@ -58,6 +68,9 @@
     
     if (!card.isUnplayable) {
         if (!card.isFaceUp) {
+            // set result to show rank/suit of card flipped up
+            self.flipResult = [@"Flipped up " stringByAppendingString:card.contents];
+            
             // see if flipping this card up creates a match
             for (Card *otherCard in self.cards) {
                 if (otherCard.isFaceUp && !otherCard.isUnplayable) {
@@ -65,10 +78,16 @@
                     if (matchScore) {
                         otherCard.unplayable = YES;
                         card.unplayable = YES;
+                        
                         self.score += matchScore * MATCH_BONUS;
+                        self.flipResult = [NSString stringWithFormat:@"Matched %@ & %@. %d points.", card.contents,
+                                           otherCard.contents, matchScore * MATCH_BONUS];
                     } else {
                         otherCard.faceUp = NO;
+                        
                         self.score -= MISMATCH_PENALTY;
+                        self.flipResult = [NSString stringWithFormat:@"Mismatched %@ & %@. %d point penalty.", card.contents,
+                                           otherCard.contents, MISMATCH_PENALTY];
                     }
                     break;
                 }
@@ -78,6 +97,9 @@
         }
         
         card.faceUp = !card.isFaceUp;
+        
     }
 }
+
+
 @end

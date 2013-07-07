@@ -20,4 +20,7 @@
 
 @property (nonatomic, readonly) int score;
 
+@property (nonatomic, readonly) NSString *flipResult;
+
+
 @end
