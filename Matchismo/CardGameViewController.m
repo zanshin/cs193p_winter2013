@@ -13,10 +13,11 @@
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (nonatomic) int flipCount;
-@property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *flipResultsLabel;
+
+@property (nonatomic) int flipCount;
+@property (strong, nonatomic) CardMatchingGame *game;
 @end
 
 @implementation CardGameViewController
@@ -65,6 +66,26 @@
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
+}
+
+// when "Deal" is tapped, start a new game
+- (IBAction)dealButton
+{
+    self.game = nil;
+    self.game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
+                                                  usingDeck:[[PlayingCardDeck alloc] init]];
+    
+    for (UIButton *cardButton in self.cardButtons) {
+        cardButton.alpha = 1.0;
+        Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
+        cardButton.selected = card.isFaceUp;
+        cardButton.enabled = !card.isUnplayable;
+    }
+
+    self.flipCount = 0;
+    self.flipResultsLabel.text = @" ";
+    self.scoreLabel.text = @"Score: 0";
+    self.flipsLabel.text = @"Flips: 0";
 }
 
 
