@@ -15,7 +15,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *flipResultsLabel;
-
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gameSelector;
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) CardMatchingGame *game;
 @end
@@ -47,11 +47,10 @@
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.unplayable ? 0.3 : 1.0;
-        
-        // update flip results
-        self.flipResultsLabel.text = self.game.flipResult;
+                
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    self.flipResultsLabel.text = self.game.flipResult;
 }
 
 - (void)setFlipCount:(int)flipCount
@@ -72,20 +71,29 @@
 - (IBAction)dealButton
 {
     self.game = nil;
-    self.game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
-                                                  usingDeck:[[PlayingCardDeck alloc] init]];
-    
-    for (UIButton *cardButton in self.cardButtons) {
-        cardButton.alpha = 1.0;
-        Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
-        cardButton.selected = card.isFaceUp;
-        cardButton.enabled = !card.isUnplayable;
-    }
-
     self.flipCount = 0;
-    self.flipResultsLabel.text = @" ";
-    self.scoreLabel.text = @"Score: 0";
-    self.flipsLabel.text = @"Flips: 0";
+    [self updateUI];
+}
+
+// the gameSelector determines if this is a 2-card match game or a 3-card match game
+- (IBAction)gameSelectorChanged
+{
+    switch (self.gameSelector.selectedSegmentIndex) {
+        case 0:
+            self.game.numberOfCardsToMatch = 2;
+            self.flipResultsLabel.text = @"2 card match mode selected";
+            break;
+            
+        case 1:
+            self.game.numberOfCardsToMatch = 3;
+            self.flipResultsLabel.text = @"3 card match mode selected";
+            break;
+            
+        default:
+            self.game.numberOfCardsToMatch = 2;
+            self.flipResultsLabel.text = @"2 card match mode selected";
+            break;
+    }
 }
 
 
