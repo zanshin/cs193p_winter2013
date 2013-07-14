@@ -39,6 +39,9 @@
 // keeps the UI in sync with the model
 - (void)updateUI
 {
+    // use an image for the card back
+    UIImage *cardback = [UIImage imageNamed:@"celloCardback.jpg"];
+    
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
@@ -47,7 +50,12 @@
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.unplayable ? 0.3 : 1.0;
-                
+        
+        if (!card.isFaceUp) {
+            [cardButton setImage:cardback forState:UIControlStateNormal];
+        } else {
+            [cardButton setImage:nil forState:UIControlStateNormal];
+        }
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     self.flipResultsLabel.text = self.game.flipResult;

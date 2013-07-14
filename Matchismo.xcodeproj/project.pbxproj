@@ -23,6 +23,7 @@
 		D85786DD17887A1F00AE0D49 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = D85786DC17887A1F00AE0D49 /* PlayingCard.m */; };
 		D85786E017887A3800AE0D49 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = D85786DF17887A3800AE0D49 /* PlayingCardDeck.m */; };
 		D85786E317889F6300AE0D49 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = D85786E217889F6300AE0D49 /* CardMatchingGame.m */; };
+		D8E5D0F31792537500D35172 /* celloCardback.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8E5D0F21792537500D35172 /* celloCardback.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D85786DF17887A3800AE0D49 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
 		D85786E117889F6300AE0D49 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
 		D85786E217889F6300AE0D49 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
+		D8E5D0F21792537500D35172 /* celloCardback.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = celloCardback.jpg; path = ../../../../../../Desktop/celloCardback.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		D85786B7178872AB00AE0D49 /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
+				D8E5D0F21792537500D35172 /* celloCardback.jpg */,
 				D85786C9178872AB00AE0D49 /* MainStoryboard.storyboard */,
 				D85786D7178879CC00AE0D49 /* Model */,
 				D85786CC178872AB00AE0D49 /* CardGameViewController.h */,
@@ -197,6 +200,7 @@
 				D85786C6178872AB00AE0D49 /* Default@2x.png in Resources */,
 				D85786C8178872AB00AE0D49 /* Default-568h@2x.png in Resources */,
 				D85786CB178872AB00AE0D49 /* MainStoryboard.storyboard in Resources */,
+				D8E5D0F31792537500D35172 /* celloCardback.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +341,7 @@
 				D85786D3178872AB00AE0D49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
