@@ -62,6 +62,7 @@
 
 - (IBAction)flipCard:(UIButton *)sender
 {
+    self.gameSelector.enabled = NO;
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
@@ -70,6 +71,7 @@
 // when "Deal" is tapped, start a new game
 - (IBAction)dealButton
 {
+    self.gameSelector.enabled = YES;
     self.game = nil;
     self.flipCount = 0;
     [self updateUI];
