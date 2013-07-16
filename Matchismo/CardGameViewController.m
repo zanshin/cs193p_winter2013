@@ -88,22 +88,34 @@
 // the gameSelector determines if this is a 2-card match game or a 3-card match game
 - (IBAction)gameSelectorChanged
 {
-    switch (self.gameSelector.selectedSegmentIndex) {
-        case 0:
-            self.game.numberOfCardsToMatch = 2;
-            self.flipResultsLabel.text = @"2 card match mode selected";
-            break;
-            
-        case 1:
-            self.game.numberOfCardsToMatch = 3;
-            self.flipResultsLabel.text = @"3 card match mode selected";
-            break;
-            
-        default:
-            self.game.numberOfCardsToMatch = 2;
-            self.flipResultsLabel.text = @"2 card match mode selected";
-            break;
+    NSLog(@"gameSelector: %d", self.gameSelector.selectedSegmentIndex);
+    if (self.gameSelector.selectedSegmentIndex == 0) {
+        self.game.numberOfCardsToMatch = 2;
+        NSLog(@"number of cards to match set to: %d", self.game.numberOfCardsToMatch);
+    } else {
+        self.game.numberOfCardsToMatch = 3;
+        NSLog(@"number of cards to match set to: %d", self.game.numberOfCardsToMatch);
     }
+//    switch (self.gameSelector.selectedSegmentIndex) {
+//        case 0:
+//            self.game.numberOfCardsToMatch = 2;
+//            NSLog(@"number of cards to match set to: %d", self.game.numberOfCardsToMatch);
+//            self.flipResultsLabel.text = @"2 card match mode selected";
+//            break;
+//            
+//        case 1:
+//            self.game.numberOfCardsToMatch = 3;
+//            NSLog(@"number of cards to match set to: %d", self.game.numberOfCardsToMatch);
+//            self.flipResultsLabel.text = @"3 card match mode selected";
+//            break;
+//            
+//        default:
+//            self.game.numberOfCardsToMatch = 2;
+//            NSLog(@"number of cards set by default");
+//            NSLog(@"number of cards to match set to: %d", self.game.numberOfCardsToMatch);
+//            self.flipResultsLabel.text = @"2 card match mode selected";
+//            break;
+//    }
 }
 
 
