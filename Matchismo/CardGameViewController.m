@@ -13,9 +13,11 @@
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *flipResultsLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gameSelector;
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) CardMatchingGame *game;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @end
 
 @implementation CardGameViewController
@@ -37,6 +39,9 @@
 // keeps the UI in sync with the model
 - (void)updateUI
 {
+    // use an image for the card back
+    UIImage *cardback = [UIImage imageNamed:@"celloCardback.jpg"];
+    
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
@@ -45,8 +50,15 @@
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.unplayable ? 0.3 : 1.0;
+        
+        if (!card.isFaceUp) {
+            [cardButton setImage:cardback forState:UIControlStateNormal];
+        } else {
+            [cardButton setImage:nil forState:UIControlStateNormal];
+        }
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    self.flipResultsLabel.text = self.game.flipResult;
 }
 
 - (void)setFlipCount:(int)flipCount
@@ -58,9 +70,52 @@
 
 - (IBAction)flipCard:(UIButton *)sender
 {
+    self.gameSelector.enabled = NO;
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
+}
+
+// when "Deal" is tapped, start a new game
+- (IBAction)dealButton
+{
+    self.gameSelector.enabled = YES;
+    self.game = nil;
+    self.flipCount = 0;
+    [self updateUI];
+}
+
+// the gameSelector determines if this is a 2-card match game or a 3-card match game
+- (IBAction)gameSelectorChanged
+{
+    NSLog(@"gameSelector: %d", self.gameSelector.selectedSegmentIndex);
+    if (self.gameSelector.selectedSegmentIndex == 0) {
+        self.game.numberOfCardsToMatch = 2;
+        NSLog(@"number of cards to match set to: %d", self.game.numberOfCardsToMatch);
+    } else {
+        self.game.numberOfCardsToMatch = 3;
+        NSLog(@"number of cards to match set to: %d", self.game.numberOfCardsToMatch);
+    }
+//    switch (self.gameSelector.selectedSegmentIndex) {
+//        case 0:
+//            self.game.numberOfCardsToMatch = 2;
+//            NSLog(@"number of cards to match set to: %d", self.game.numberOfCardsToMatch);
+//            self.flipResultsLabel.text = @"2 card match mode selected";
+//            break;
+//            
+//        case 1:
+//            self.game.numberOfCardsToMatch = 3;
+//            NSLog(@"number of cards to match set to: %d", self.game.numberOfCardsToMatch);
+//            self.flipResultsLabel.text = @"3 card match mode selected";
+//            break;
+//            
+//        default:
+//            self.game.numberOfCardsToMatch = 2;
+//            NSLog(@"number of cards set by default");
+//            NSLog(@"number of cards to match set to: %d", self.game.numberOfCardsToMatch);
+//            self.flipResultsLabel.text = @"2 card match mode selected";
+//            break;
+//    }
 }
 
 
