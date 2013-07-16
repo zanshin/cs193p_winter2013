@@ -105,7 +105,7 @@
                         }
                     }
                     
-                    self.score += matchScore * MATCH_BONUS;
+                    self.score += matchScore * MATCH_BONUS * self.numberOfCardsToMatch;
                     self.flipResult = [self.flipResult stringByAppendingFormat:@"match. Match Bonus!"];
                 } else {
                     for (Card *otherCard in otherCards) {
