@@ -33,6 +33,13 @@
     return _flipResult;
 }
 
+// override numberOfCardsToMatch getter to ensure it is 2 by default
+- (int)numberOfCardsToMatch
+{
+    if (!_numberOfCardsToMatch) _numberOfCardsToMatch = 2;
+    return _numberOfCardsToMatch;
+}
+
 // designated initializer
 - (id)initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck
 {
