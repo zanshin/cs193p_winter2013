@@ -59,21 +59,26 @@
 
 // a specific match implementation for PlayingCard, works on suit & rank
 // matching rank is 4x harder than matching suit, so it gets more points
+// Per lecture 4: use introspection to make sure we are matching playing cards
+// to playing cards
 - (int)match:(NSArray *)otherCards
 {
     int score = 0;
     
     if ([otherCards count ]) {
-        for (PlayingCard *otherCard in otherCards) {
-            if ([otherCard.suit isEqualToString:self.suit]) {
-                score += 1;
-            } else if (otherCard.rank == self.rank) {
-                score += 4;
-            } else {
-                score = 0;
-                break;
+        id otherCard = [otherCards lastObject];
+        if ([otherCard isKindOfClass:[PlayingCard class]]) {
+            for (PlayingCard *otherCard in otherCards) {
+                if ([otherCard.suit isEqualToString:self.suit]) {
+                    score += 1;
+                } else if (otherCard.rank == self.rank) {
+                    score += 4;
+                } else {
+                    score = 0;
+                    break;
+                }
             }
-        }
+        } // else non-PlayingCard ...
     }
     
     return score;
