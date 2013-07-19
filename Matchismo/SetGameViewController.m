@@ -7,9 +7,15 @@
 //
 
 #import "SetGameViewController.h"
+#import "SetMatchingGame.h"
 
 @interface SetGameViewController ()
-
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *setButtons;
+@property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *flipResultsLabel;
+@property (nonatomic) int flipCount;
+@property (strong, nonatomic) SetMatchingGame *setGame;
 @end
 
 @implementation SetGameViewController

@@ -25,6 +25,7 @@
 		D85786E317889F6300AE0D49 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = D85786E217889F6300AE0D49 /* CardMatchingGame.m */; };
 		D8E5D0F31792537500D35172 /* celloCardback.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8E5D0F21792537500D35172 /* celloCardback.jpg */; };
 		D8E5D0FC1799B57600D35172 /* SetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E5D0FB1799B57600D35172 /* SetGameViewController.m */; };
+		D8E5D0FF1799BE5400D35172 /* SetMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E5D0FE1799BE5400D35172 /* SetMatchingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		D8E5D0F21792537500D35172 /* celloCardback.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = celloCardback.jpg; path = ../../../../../../Desktop/celloCardback.jpg; sourceTree = "<group>"; };
 		D8E5D0FA1799B57600D35172 /* SetGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGameViewController.h; sourceTree = "<group>"; };
 		D8E5D0FB1799B57600D35172 /* SetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameViewController.m; sourceTree = "<group>"; };
+		D8E5D0FD1799BE5400D35172 /* SetMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetMatchingGame.h; sourceTree = "<group>"; };
+		D8E5D0FE1799BE5400D35172 /* SetMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetMatchingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 		D85786D7178879CC00AE0D49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D8E5D0FD1799BE5400D35172 /* SetMatchingGame.h */,
+				D8E5D0FE1799BE5400D35172 /* SetMatchingGame.m */,
 				D85786E117889F6300AE0D49 /* CardMatchingGame.h */,
 				D85786E217889F6300AE0D49 /* CardMatchingGame.m */,
 				D85786D4178879B200AE0D49 /* Card.h */,
@@ -225,6 +230,7 @@
 				D85786E017887A3800AE0D49 /* PlayingCardDeck.m in Sources */,
 				D85786E317889F6300AE0D49 /* CardMatchingGame.m in Sources */,
 				D8E5D0FC1799B57600D35172 /* SetGameViewController.m in Sources */,
+				D8E5D0FF1799BE5400D35172 /* SetMatchingGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
