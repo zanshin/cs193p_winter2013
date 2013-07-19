@@ -24,6 +24,7 @@
 		D85786E017887A3800AE0D49 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = D85786DF17887A3800AE0D49 /* PlayingCardDeck.m */; };
 		D85786E317889F6300AE0D49 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = D85786E217889F6300AE0D49 /* CardMatchingGame.m */; };
 		D8E5D0F31792537500D35172 /* celloCardback.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8E5D0F21792537500D35172 /* celloCardback.jpg */; };
+		D8E5D0FC1799B57600D35172 /* SetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E5D0FB1799B57600D35172 /* SetGameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		D85786E117889F6300AE0D49 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
 		D85786E217889F6300AE0D49 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
 		D8E5D0F21792537500D35172 /* celloCardback.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = celloCardback.jpg; path = ../../../../../../Desktop/celloCardback.jpg; sourceTree = "<group>"; };
+		D8E5D0FA1799B57600D35172 /* SetGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGameViewController.h; sourceTree = "<group>"; };
+		D8E5D0FB1799B57600D35172 /* SetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +103,9 @@
 		D85786B7178872AB00AE0D49 /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
-				D8E5D0F21792537500D35172 /* celloCardback.jpg */,
 				D85786C9178872AB00AE0D49 /* MainStoryboard.storyboard */,
+				D8E5D0FA1799B57600D35172 /* SetGameViewController.h */,
+				D8E5D0FB1799B57600D35172 /* SetGameViewController.m */,
 				D85786D7178879CC00AE0D49 /* Model */,
 				D85786CC178872AB00AE0D49 /* CardGameViewController.h */,
 				D85786CD178872AB00AE0D49 /* CardGameViewController.m */,
@@ -113,6 +117,7 @@
 		D85786B8178872AB00AE0D49 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D8E5D0F21792537500D35172 /* celloCardback.jpg */,
 				D85786C0178872AB00AE0D49 /* CardGameAppDelegate.h */,
 				D85786C1178872AB00AE0D49 /* CardGameAppDelegate.m */,
 				D85786B9178872AB00AE0D49 /* Matchismo-Info.plist */,
@@ -219,6 +224,7 @@
 				D85786DD17887A1F00AE0D49 /* PlayingCard.m in Sources */,
 				D85786E017887A3800AE0D49 /* PlayingCardDeck.m in Sources */,
 				D85786E317889F6300AE0D49 /* CardMatchingGame.m in Sources */,
+				D8E5D0FC1799B57600D35172 /* SetGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
