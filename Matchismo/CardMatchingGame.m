@@ -9,60 +9,17 @@
 #import "CardMatchingGame.h"
 
 @interface CardMatchingGame()
-@property (strong, nonatomic) NSMutableArray *cards; // of Card
 @property (nonatomic, readwrite) int score;
 @property (nonatomic, readwrite) NSString *flipResult;
-@property (nonatomic) NSString *flipText;
-@property (nonatomic) NSString *flipScore;
-@property (nonatomic) int previousScore;
 @end
 
 @implementation CardMatchingGame
-
-// Lazily instantiate cards
-- (NSMutableArray *)cards
-{
-    if (!_cards) _cards = [[NSMutableArray alloc] init];
-    return _cards;
-}
-
-// Lazily instantiate result string
-- (NSString *)flipResult
-{
-    if (!_flipResult) _flipResult = [[NSString alloc] init];
-    return _flipResult;
-}
 
 // override numberOfCardsToMatch getter to ensure it is 2 by default
 - (int)numberOfCardsToMatch
 {
     if (!_numberOfCardsToMatch) _numberOfCardsToMatch = 2;
     return _numberOfCardsToMatch;
-}
-
-// designated initializer
-- (id)initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck
-{
-    self = [super init];
-    
-    if (self) {
-        for (int i = 0; i < cardCount; i++) {
-            Card *card = [deck drawRandomCard];
-            if (!card) {
-                self = nil;
-            } else {
-                self.cards[i] = card;
-            }
-        }
-    }
-    
-    return self;
-}
-
-// return card at index
-- (Card *)cardAtIndex:(NSUInteger)index
-{
-    return (index < self.cards.count) ? self.cards[index] : nil;
 }
 
 #define MATCH_BONUS 4

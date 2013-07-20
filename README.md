@@ -9,6 +9,11 @@ tag: assignment1 branch: assignment/one
 
 The first assignment builds a simple playing card matching game. Players can opt to match 2 or 3 card. Points are awarded for matching either suit or rank, and points are lost for flipping cards over and mismatches.
 
+####Two: Add "Set" card game to Matchismo
+tag: assignment2 branch: assignment/two
+
+Enhance Matchismo with a working version of the Set card game, a three-card matching game.
+
 ###Lectures
 
 ####Three: Expanding Card Matching Game

@@ -7,25 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Deck.h"
+#import "MatchingGame.h"
 
-@interface CardMatchingGame : NSObject
-
-@property (nonatomic, readonly) int score;
-
-@property (nonatomic, readonly) NSString *flipResult;
-
+@interface CardMatchingGame : MatchingGame
 @property (nonatomic) int numberOfCardsToMatch;
-
-// designated initializer
-- (id)initWithCardCount:(NSUInteger)cardCount
-              usingDeck:(Deck *)deck;
-
-- (void)flipCardAtIndex:(NSUInteger)index;
-
-- (Card *)cardAtIndex:(NSUInteger)index;
-
-
-
-
 @end
